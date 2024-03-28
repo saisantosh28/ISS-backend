@@ -20,10 +20,10 @@ app.use(middleware)
 //Routes
 app.use('/', internRoutes);
 app.use('/', adminRoutes);
-app.get('/',(req,res)=>{
+app.get('/testing', (req, res) => {
   res.send("Running");
 });
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
-  });
+  console.log(`Server is running at http://localhost:${port}`);
+});
