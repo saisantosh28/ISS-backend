@@ -18,8 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(middleware)
 
 //Routes
-app.use('/', internRoutes);
-app.use('/', adminRoutes);
+app.use('/backend', internRoutes);
+app.use('/backend', adminRoutes);
 app.get('/testing', (req, res) => {
   res.send("Running");
 });
