@@ -11,7 +11,7 @@ const {
     assignDepartments,
     getAllSchedules,
 } = require('../controllers/adminController.js');
-
+const {verifyToken}=require("../middleware/middleware.js");
 
 adminRoutes.post('/admin-login', adminLogin);
 adminRoutes.get('/admin/leaves', verifyToken, getAllLeaves);

@@ -9,7 +9,7 @@ const middleware = express.json()
 const internRoutes = require('./routes/internRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const app = express();
-const port = 3000;
+const port = 8000;
 
 app.use(cors())
 mongoose.connect('mongodb+srv://maddisai2811:tEaziPDl120vdlFz@cluster0.lp2xd1o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
@@ -20,6 +20,9 @@ app.use(middleware)
 //Routes
 app.use('/', internRoutes);
 app.use('/', adminRoutes);
+app.get('/',(req,res)=>{
+  res.send("Running");
+});
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
